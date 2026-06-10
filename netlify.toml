@@ -9,8 +9,10 @@
   NODE_ENV     = "production"
 
 [functions]
-  node_bundler        = "esbuild"
-  external_node_modules = ["bcrypt", "@simplewebauthn/server", "pg"]
+  node_bundler = "esbuild"
+  external_node_modules = ["bcrypt", "@simplewebauthn/server"]
+  # removed "pg" from the list
+
 
 [[redirects]]
   from   = "/api/*"
