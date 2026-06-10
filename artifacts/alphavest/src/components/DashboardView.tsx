@@ -510,16 +510,8 @@ export default function DashboardView({
             onLogout={onLogout}
             onUpdateTheme={onUpdateTheme}
           />
-          <button
-            onClick={() => onNavigate("landing")}
-            className="flex items-center gap-1.5 min-w-0"
-          >
-            <LogoIcon size={22} />
-            <span className="font-serif text-sm font-bold text-brand-gold uppercase truncate">
-              AlphaVest
-            </span>
-          </button>
         </div>
+
         <div className="flex items-center gap-1">
           <button
             onClick={() => setActiveTab("notifications")}
