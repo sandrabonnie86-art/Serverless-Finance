@@ -37,15 +37,16 @@ const allowedOrigins = process.env.FRONTEND_URL
 
 app.use(
   cors({
-    origin: isProd && allowedOrigins.length > 0
-      ? (origin, cb) => {
-          if (!origin || allowedOrigins.some((o) => origin.startsWith(o))) {
-            cb(null, true);
-          } else {
-            cb(new Error("Not allowed by CORS"));
+    origin:
+      isProd && allowedOrigins.length > 0
+        ? (origin, cb) => {
+            if (!origin || allowedOrigins.some((o) => origin.startsWith(o))) {
+              cb(null, true);
+            } else {
+              cb(new Error("Not allowed by CORS"));
+            }
           }
-        }
-      : true,
+        : true,
     credentials: true,
   }),
 );
@@ -66,7 +67,7 @@ app.use(
       ? new PgStore({
           pool,
           tableName: "user_sessions",
-          createTableIfMissing: true,
+          createTableIfMissing: false,
         })
       : undefined,
     cookie: {
